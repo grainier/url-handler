@@ -2,7 +2,7 @@
 name = "url-handler"
 version = "0.1.0"
 description = "A cross-platform RDP URL handler."
-authors = ["Grainier Perera <grainier.perera@macrometa.com>"]
+authors = ["Grainier Perera <grainier@apache.org>"]
 readme = "README.md"
 packages = [{include = "rdp_handler"}]
 
