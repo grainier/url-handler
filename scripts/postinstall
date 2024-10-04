@@ -1,15 +1,24 @@
 #!/bin/bash
 set -e
+set -x  # Enable script debugging
 
 APP_NAME="RDPURLHandler.app"
-APP_PATH="/Applications/$APP_NAME"
+APP_PATH="$3/Applications/$APP_NAME"  # Use $3 to get the installation destination
+
+echo "Running postinstall script..."
+echo "Application Path: $APP_PATH"
+
+if [ ! -d "$APP_PATH" ]; then
+    echo "Error: Application not found at $APP_PATH"
+    exit 1
+fi
 
 # Register the application as the handler for 'rdp' URL scheme
 echo "Registering $APP_NAME as the handler for rdp:// URLs."
-
-# Use the lsregister command to update the Launch Services database
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$APP_PATH"
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$APP_PATH" || {
+    echo "Error: Failed to register URL scheme."
+    exit 1
+}
 
 echo "Registration complete."
-
 exit 0
