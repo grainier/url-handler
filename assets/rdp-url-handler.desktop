@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=RDP URL Handler
+Exec=/usr/local/bin/rdp_url_handler %u
+Type=Application
+MimeType=x-scheme-handler/rdp;
+NoDisplay=true

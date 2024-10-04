@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "url-handler"
+version = "0.1.0"
+description = "A cross-platform RDP URL handler."
+authors = ["Grainier Perera <grainier.perera@macrometa.com>"]
+readme = "README.md"
+packages = [{include = "rdp_handler"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
