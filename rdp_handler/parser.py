@@ -5,9 +5,6 @@ def parse_rdp_url(url: str) -> dict:
     if not url.startswith("rdp://"):
         raise ValueError("Invalid URL scheme. URL must start with 'rdp://'")
 
-    # Remove the 'rdp://' prefix
-    url = url[6:]
-
     # Parse the URL
     parsed_url = urllib.parse.urlparse(url)
     query_params = urllib.parse.parse_qs(parsed_url.query)
