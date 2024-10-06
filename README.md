@@ -174,6 +174,7 @@ A cross-platform RDP URL handler that processes `rdp://` URLs and launches the T
 
   ```
   rdp://v=172.105.58.129:3389&username=macrometa&f=true
+  rdp://172.105.58.129:3389?username=macrometa&f=true
   ```
 
 ## Logs
