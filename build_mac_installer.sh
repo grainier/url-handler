@@ -5,8 +5,8 @@ set -e
 sudo rm -rf dist build RDPURLHandler.pkg package_root
 
 # Clean previous installs
-# sudo pkgutil --forget com.yourcompany.rdpurlhandler
-# sudo rm -rf /Applications/RDPURLHandler.app ~/Applications/RDPURLHandler.app
+#sudo pkgutil --forget com.yourcompany.rdpurlhandler
+#sudo rm -rf /Applications/RDPURLHandler.app ~/Applications/RDPURLHandler.app
 
 # Build the application
 pyinstaller RDPURLHandler.spec

@@ -9,7 +9,7 @@ def launch_thincast(rdp_file: str):
     possible_paths = [
         '/usr/bin/thincast-client',  # Common Linux path
         '/usr/local/bin/thincast-client',
-        '/Applications/ThinCast.app/Contents/MacOS/ThinCast'  # MacOS path
+        '/Applications/Thincast Remote Desktop Client.app/Contents/MacOS/Thincast Remote Desktop Client'  # MacOS path
     ]
 
     thincast_path = None
