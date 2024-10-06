@@ -18,9 +18,12 @@ log_dir.mkdir(parents=True, exist_ok=True)
 log_file = log_dir / 'rdp_url_handler.log'
 
 logging.basicConfig(
-    filename=log_file,
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file, mode='a'),
+        logging.StreamHandler()
+    ]
 )
 
 logger = logging.getLogger(__name__)
