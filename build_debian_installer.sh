@@ -12,7 +12,7 @@ DIST_DIR=dist
 rm -rf $BUILD_DIR $DIST_DIR
 
 # Build the application
-pyinstaller --onefile --name $APP_NAME main.py
+pyinstaller --onefile --name $APP_NAME rdp_handler/main.py
 
 # Create the necessary directories for the Debian package
 mkdir -p $PACKAGE_ROOT/usr/local/bin
