@@ -31,7 +31,7 @@ def register_url_scheme_mac():
 def register_url_scheme_linux():
     # Path to the application executable
     app_executable = os.path.abspath(os.path.join(__file__, '..', 'main.py'))
-    desktop_entry_name = 'rdp-url-handler.desktop'
+    desktop_entry_name = 'rdpurlhandler.desktop'
     desktop_entry_path = os.path.expanduser(f'~/.local/share/applications/{desktop_entry_name}')
 
     # Create the .desktop file
