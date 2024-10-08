@@ -38,16 +38,39 @@ Version: $VERSION
 Section: utils
 Priority: optional
 Architecture: amd64
-Depends: python3
+Depends: python3, desktop-file-utils
 Maintainer: Your Company <yourcompany@example.com>
 Description: RDP URL Handler for Linux.
  This package installs RDP URL Handler, an RDP URL handler utility for Ubuntu.
 EOL
 
+# Create the postinst script
+cat <<EOL > $PACKAGE_ROOT/DEBIAN/postinst
+#!/bin/bash
+set -e
+
+echo "Running post-installation script for $APP_NAME"
+
+# Update the desktop database
+if command -v update-desktop-database > /dev/null; then
+    echo "Updating desktop database..."
+    update-desktop-database /usr/share/applications
+fi
+
+# Update the MIME database
+if command -v update-mime-database > /dev/null; then
+    echo "Updating MIME database..."
+    update-mime-database /usr/share/mime
+fi
+
+exit 0
+EOL
+
 # Set permissions
-chmod -R 755 $PACKAGE_ROOT/usr/local/bin/$APP_NAME
+chmod 755 $PACKAGE_ROOT/DEBIAN/postinst
+chmod 755 $PACKAGE_ROOT/usr/local/bin/$APP_NAME
 chmod 644 $PACKAGE_ROOT/usr/share/applications/rdpurlhandler.desktop
-chmod 755 $PACKAGE_ROOT/DEBIAN/control
+chmod 644 $PACKAGE_ROOT/DEBIAN/control
 
 # Build the Debian package
 dpkg-deb --build $PACKAGE_ROOT $APP_NAME-$VERSION.deb
