@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+# Install required libraries
+python3 -m venv venv
+source venv/bin/activate
+pip3 install pyobjc
+pip3 install pyinstaller
+poetry install
+
 # Clean previous builds
 sudo rm -rf dist build RDPURLHandler.pkg package_root
 
