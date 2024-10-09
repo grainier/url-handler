@@ -170,7 +170,7 @@ A cross-platform RDP URL handler that processes `rdp://` URLs and launches the T
   - Generate an `.rdp` file based on the URL parameters.
   - Open the ThinCast RDP client with the generated `.rdp` file.
 
-- **Example URL**:
+- **Example URLs**:
 
   ```
   rdp://v=172.105.58.129:3389&username=macrometa&f=true
